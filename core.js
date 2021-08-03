@@ -1,12 +1,26 @@
 $(document).ready(function(){
     var n=0;
 
-    // temp
-    setInterval(increment,1000);
+    setInterval(increment, 1000);
 
     function increment(){
-        n++;
-        setCounter(n);
+        $.ajax({
+            url: "https://t.me/zonechill",
+            type: "GET",
+            data: {},
+            beforeSend: function () {
+                
+            },
+            success: function (o) {
+                let obj_ = $('<div></div>');
+                obj_.html(o);
+
+                setCounter($('tgme_page_extra', obj_));
+            },
+            error: function () {
+                console.log("Error! Failed to query t.me and get channel information.")
+            },
+        });
     }
 
     function setCounter(v){
