@@ -18,7 +18,10 @@ $(document).ready(function(){
             data: {"chat_id": `@${channel_uname}`},
 
             success: function (o) {
-                setCounter(o['result']);
+                let count_ = o['result'];
+
+                setCounter(count_);
+                $("title").text(`CHILL ZONE - ${count_}`);
             },
 
             error: function () {
