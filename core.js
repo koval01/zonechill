@@ -8,7 +8,7 @@ $(document).ready(function(){
             url: "https://t.me/zonechill",
             type: "GET",
             data: {},
-            crossDomain: true,
+            crossDomain: false,
             beforeSend: function () {
                 
             },
