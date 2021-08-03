@@ -3,26 +3,25 @@ $(document).ready(function(){
 
     setInterval(increment, 1000);
 
-    function increment(){
-        $.ajax({
-            url: "https://t.me/zonechill",
-            type: "GET",
-            headers: {
-                'Origin': '*'
-            },
-            beforeSend: function () {
-                
-            },
-            success: function (o) {
-                let obj_ = $('<div></div>');
-                obj_.html(o);
+    function httpGet(link_request)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", link_request, false);
+        xmlHttp.send(null);
+        return xmlHttp.responseText;
+    }
 
-                setCounter($('tgme_page_extra', obj_));
-            },
-            error: function () {
-                console.log("Error! Failed to query t.me and get channel information.")
-            },
-        });
+    function increment(){
+        let body = httpGet("https://t.me/zonechill");
+
+        try {
+            let obj_ = $('<div></div>');
+            obj_.html(o);
+
+            setCounter($('tgme_page_extra', obj_));
+        } catch {
+            console.log("Failed to get channel info.");
+        }
     }
 
     function setCounter(v){
