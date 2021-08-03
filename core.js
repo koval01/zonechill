@@ -15,12 +15,12 @@ $(document).ready(function(){
         $.ajax({
             url: `${req_url}/${method}`,
             type: "GET",
-            params: {"chat_id": `@${channel_uname}`},
+            data: {"chat_id": `@${channel_uname}`},
 
             success: function (o) {
                 setCounter(o['result']);
             },
-            
+
             error: function () {
                 console.log("Error! Failed to query Telegram API and get channel information.")
             },
