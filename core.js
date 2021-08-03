@@ -3,25 +3,17 @@ $(document).ready(function(){
 
     setInterval(increment, 1000);
 
-    function httpGet(link_request)
-    {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", link_request, false);
-        xmlHttp.send(null);
-        return xmlHttp.responseText;
-    }
-
     function increment(){
-        let body = httpGet("https://tight-forest-613e.koval-dev.workers.dev/");
-
-        try {
-            let obj_ = $('<div></div>');
-            obj_.html(o);
-
-            setCounter($('tgme_page_extra', obj_));
-        } catch {
-            console.log("Failed to get channel info.");
-        }
+        $.ajax({
+            url: "https://tight-forest-613e.koval-dev.workers.dev/",
+            type: "GET",
+            success: function (o) {
+                setCounter(o['result']);
+            },
+            error: function () {
+                console.log("Error! Failed to query Telegram API and get channel information.")
+            },
+        });
     }
 
     function setCounter(v){
