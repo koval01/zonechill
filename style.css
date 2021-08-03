@@ -43,3 +43,7 @@ $skew:20deg;
   -ms-user-select: none;
   user-select: none;
 }
+.box {
+  justify-content: center;
+  display: flex;
+}
