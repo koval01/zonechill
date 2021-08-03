@@ -9,6 +9,7 @@ $(document).ready(function(){
             type: "GET",
             data: {},
             crossDomain: false,
+            async: false,
             beforeSend: function () {
                 
             },
