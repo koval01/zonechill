@@ -7,9 +7,9 @@ $(document).ready(function(){
         $.ajax({
             url: "https://t.me/zonechill",
             type: "GET",
-            data: {},
-            crossDomain: false,
-            async: false,
+            headers: {
+                'Origin': '*'
+            },
             beforeSend: function () {
                 
             },
