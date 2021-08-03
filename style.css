@@ -46,4 +46,5 @@ $skew:20deg;
 .box {
   justify-content: center;
   display: flex;
+  padding-right: 10%; 
 }
