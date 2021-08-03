@@ -1,6 +1,7 @@
-(function() {
+$(document).ready(function(){
     var n=0;
 
+    // temp
     setInterval(increment,1000);
 
     function increment(){
@@ -9,16 +10,16 @@
     }
 
     function setCounter(v){
-        let counter=document.querySelector(".counter");
-        let old=counter.getElementsByClassName("counter-value");
-        let oldContent=0;
+        var counter=$(".counter");
+        var old=counter.children(".counter-value");
+        var oldContent=old.children(".counter-value-mask");
 
-        let t=0.4;
-        let d=t*0.0;
-        let d2=t*0.3;
-        let padding=55;
-        let offset=5;
-        let w=old.data("w");
+        var t=0.4;
+        var d=t*0.0;
+        var d2=t*0.3;
+        var padding=55;
+        var offset=5;
+        var w=old.data("w");
 
         w+=padding;
         TweenMax.to(old,t,{delay:d,x:w,ease:Quad.easeIn});
@@ -27,10 +28,11 @@
 
         setTimeout(function(){old.remove()},t*1000);
         
-        var neu=document.querySelector("<div/>").classList.add("counter-value").appendTo(counter);
-        var neuContent=document.querySelector("<div/>").classList.add("counter-value-mask").appendTo(neu).text(v);
+        var neu=$("<div/>").addClass("counter-value").appendTo(counter);
+        var neuContent=$("<div/>").addClass("counter-value-mask").appendTo(neu).text(v);
         
         w=neuContent.width();
+        
         neu.data("w",w);
         neu.css({
             width:w
@@ -40,4 +42,4 @@
         TweenMax.from(neu,t,{delay:d2,x:-w});
         TweenMax.from(neuContent,t,{delay:d2,x:w-offset});
     }
-})();
+  })
