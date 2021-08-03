@@ -11,7 +11,7 @@
     function setCounter(v){
         let counter=document.querySelector(".counter");
         let old=counter.getElementsByClassName("counter-value");
-        let oldContent=old.getElementsByClassName("counter-value-mask");
+        let oldContent=0;
 
         let t=0.4;
         let d=t*0.0;
