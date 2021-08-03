@@ -32,7 +32,14 @@ $skew:20deg;
   position:absolute;
   transform-origin:0 100%;
   transform:skew(-$skew);
-  //border:1px dotted pink;
   overflow:hidden;
   line-height:1em;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
