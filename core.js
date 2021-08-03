@@ -21,7 +21,7 @@ $(document).ready(function(){
                 let count_ = o['result'];
 
                 setCounter(count_);
-                $("title").text(`CHILL ZONE - ${count_}`);
+                $("title").text(`CHILL ZONE - ${count_} SUBS`);
             },
 
             error: function () {
