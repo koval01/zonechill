@@ -12,7 +12,7 @@ $(document).ready(function(){
     }
 
     function increment(){
-        let body = httpGet("https://t.me/zonechill");
+        let body = httpGet("https://tight-forest-613e.koval-dev.workers.dev/");
 
         try {
             let obj_ = $('<div></div>');
