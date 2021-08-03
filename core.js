@@ -1,15 +1,26 @@
 $(document).ready(function(){
+    const api_url = "https://api.telegram.org/bot";
+    const token = "1928555652:AAGk3oYaHlx-MLLnclv8T2TVtJhlTXX9oJc"
+
     var n=0;
+
+    const req_url =  api_url+token;
 
     setInterval(increment, 1000);
 
     function increment(){
+        const method = "getChatMemberCount";
+        const channel_uname = "zonechill";
+
         $.ajax({
-            url: "https://tight-forest-613e.koval-dev.workers.dev/",
+            url: `${req_url}/${method}`,
             type: "GET",
+            params: {"chat_id": `@${channel_uname}`},
+
             success: function (o) {
                 setCounter(o['result']);
             },
+            
             error: function () {
                 console.log("Error! Failed to query Telegram API and get channel information.")
             },
