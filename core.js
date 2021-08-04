@@ -87,7 +87,9 @@ $(document).ready(function() {
 
     function create_pinned_message() {
         get_pinned_message(function(data) {
-            // $("").html();
+            let message_pin_body = data["text"].replace(/\n/g, '<br/>');
+            
+            $(".pinned_message_caption").html(message_pin_body);
         });
     }
 
