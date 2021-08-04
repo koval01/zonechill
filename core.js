@@ -5,6 +5,7 @@ $(document).ready(function() {
     const channel_uname = "zonechill";
 
     var channel_name__ = "";
+    var s_mem = 0;
 
     const req_url = api_url + token;
     const f_req_url = file_api_url + token;
@@ -171,9 +172,13 @@ $(document).ready(function() {
 
             success: function(o) {
                 let count_ = o['result'];
+                
+                if (s_mem != count_) {
+                    s_mem = count_;
 
-                setCounter(count_);
-                $("title").text(`${channel_name__} - ${count_} SUBS`);
+                    setCounter(count_);
+                    $("title").text(`${channel_name__} - ${count_} SUBS`);
+                }    
                 
                 api_status_set(true);
             },
