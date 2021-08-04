@@ -88,21 +88,19 @@ $(document).ready(function() {
     }
 
     function create_pinned_message() {
-        setInterval(function() {
-            get_pinned_message(function(data) {
-                if (data) {
-                    try {
-                        let message_pin_body = data["text"].replace(/\n/g, '<br/>');
-                        
-                        $(".pinned_message_caption").html(message_pin_body);
-                    } catch {
-                        // pass
-                    }
-                } else {
-                    console.log("Pinned message set skipped.")
+        get_pinned_message(function(data) {
+            if (data) {
+                try {
+                    let message_pin_body = data["text"].replace(/\n/g, '<br/>');
+                    
+                    $(".pinned_message_caption").html(message_pin_body);
+                } catch {
+                    // pass
                 }
-            });
-        }, 5000);
+            } else {
+                console.log("Pinned message set skipped.")
+            }
+        });
     }
 
     function get_pinned_message(callback) {
@@ -196,7 +194,9 @@ $(document).ready(function() {
         channel_image();
         channel_name();
         channel_desc();
+
         create_pinned_message();
+        setInterval(create_pinned_message(), 5000);
     }
 
     function setCounter(v) {
