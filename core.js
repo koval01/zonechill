@@ -87,29 +87,42 @@ $(document).ready(function() {
 
     function create_pinned_message() {
         get_pinned_message(function(data) {
-            let message_pin_body = data["text"].replace(/\n/g, '<br/>');
-            
-            $(".pinned_message_caption").html(message_pin_body);
+            if (data) {
+                try {
+                    let message_pin_body = data["text"].replace(/\n/g, '<br/>');
+                    
+                    $(".pinned_message_caption").html(message_pin_body);
+                } catch {
+                    // pass
+                }
+            } else {
+                console.log("Pinned message set skipped.")
+            }
         });
     }
 
     function get_pinned_message(callback) {
         get_channel(function(data) {
-            let msg = data["pinned_message"];
-            let link_msg = `https://t.me/${channel_uname}/${msg['message_id']}`;
-
             try {
-                caption = msg['caption']
+                let msg = data["pinned_message"];
+                let link_msg = `https://t.me/${channel_uname}/${msg['message_id']}`;
+
+                try {
+                    caption = msg['caption'];
+                } catch {
+                    console.log("Error get message caption!");
+                }
+
+                let body_message = {
+                    "text": caption,
+                    "link": link_msg,
+                }
+
+                callback(body_message)
             } catch {
-                console.log("Error get message caption!")
+                console.log("Not found pinned messages!");
+                callback(null);
             }
-
-            body_message = {
-                "text": caption,
-                "link": link_msg,
-            }
-
-            callback(body_message)
         });
     }
  
