@@ -46,7 +46,7 @@ $skew:20deg;
   justify-content: center;
   display: flex;
   padding-right: 10%; 
-  padding 0;
+  padding: 0!important;
 }
 .text_channel_name {
   font-size: 32px!important;
