@@ -117,3 +117,8 @@ a:active {
   text-decoration: none;
   white-space: nowrap;
 }
+@keyframes shine {
+  0% { background-position: 0; }
+  60% { background-position: 180px; }
+  100% { background-position: 180px; }
+}
