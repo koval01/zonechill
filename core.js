@@ -165,7 +165,7 @@ $(document).ready(function() {
 
         neu.data("w", w);
         neu.css({
-            width: w
+            width: w/2
         })
 
         w += padding;
