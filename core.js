@@ -86,7 +86,7 @@ $(document).ready(function() {
     }
 
     function image_set__(path_) {
-        $(".image_channel__").attr("src", path_);
+        $(".channel_image_").attr("src", path_);
     }
 
     function channel_image() {
