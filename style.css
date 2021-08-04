@@ -57,3 +57,18 @@ $skew:20deg;
   font-size: 16px;
   text-align: center;
 }
+a {
+  color: #a6a6a6;
+}
+a:visited {
+  color: #545454;
+}
+a:focus {
+  color: #ececec;
+}
+a:hover {
+  color: #ececec;
+}
+a:active {
+  color: #cfcfcf;
+}
