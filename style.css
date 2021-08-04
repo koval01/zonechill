@@ -105,6 +105,7 @@ a:active {
   padding: 0;
   margin-top: 15px;
 }
-.tgme_widget_message_link {
-  display: none!important;
+.pinned_message_caption {
+  font-size: 14px;
+  text-align: center;
 }
