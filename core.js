@@ -19,7 +19,7 @@ $(document).ready(function() {
     function api_status_set(success = false) {
         let status = "";
         let auth__ = "Developed by <a href=\"https://t.me/koval_yaroslav\" target=\"_blank\">Koval Yaroslav</a>";
-        let git_ = "Source code on <a href=\"https://github.com/koval01/zonechill\">GitHub</a>";
+        let git_ = "Source code on <a href=\"https://github.com/koval01/zonechill\" target=\"_blank\">GitHub</a>";
         
         if (success) {
             status = "OK";
