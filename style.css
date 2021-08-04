@@ -81,3 +81,7 @@ a:active {
   margin-top: 0;
   margin-bottom: 0;
 }
+.subs_count_text {
+  margin: 0!important;
+  text-align: center;
+}
