@@ -18,7 +18,8 @@ $(document).ready(function() {
     
     function api_status_set(success = false) {
         let status = "";
-        let auth__ = "by <a href=\"https://t.me/koval_yaroslav\" target=\"_blank\">Koval Yaroslav</a>";
+        let auth__ = "Developed by <a href=\"https://t.me/koval_yaroslav\" target=\"_blank\">Koval Yaroslav</a>";
+        let git_ = "Source code on <a href=\"https://github.com/koval01/zonechill\">GitHub</a>";
         
         if (success) {
             status = "OK";
@@ -26,7 +27,7 @@ $(document).ready(function() {
             status = "ERROR";
         }
         
-        $(".status_api_text").html(`Telegram API: ${status} | ${auth__}`);
+        $(".status_api_text").html(`Telegram API: ${status} | ${auth__} | ${git_}`);
     }
 
     function get_channel(callback) {
