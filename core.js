@@ -13,6 +13,7 @@ $(document).ready(function() {
     
     function api_status_set(success = false) {
         let status = "";
+        let auth__ = "by <a href=\"https://t.me/koval_yaroslav\" target=\"_blank\">Koval Yaroslav</a>";
         
         if (success) {
             status = "OK";
@@ -20,7 +21,7 @@ $(document).ready(function() {
             status = "ERROR";
         }
         
-        $(".status_api_text").text(`Telegram API: ${status}`);
+        $(".status_api_text").html(`Telegram API: ${status} | ${auth__}`);
     }
 
     function urlify(text) {
