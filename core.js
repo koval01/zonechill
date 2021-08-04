@@ -82,8 +82,9 @@ $(document).ready(function() {
     function channel_desc() {
         get_channel(function(channel) {
             let _l_channel_desc = channel["description"];
+            let desc_formatted = _l_channel_desc.replace("\n", "<br/>")
 
-            $(".text_channel_desc").text(_l_channel_desc);
+            $(".text_channel_desc").html(desc_formatted);
         });
     }
 
