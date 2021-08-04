@@ -53,6 +53,18 @@ $skew:20deg;
   text-align: center;
   text-decoration: overline;
 }
+.channel_image_ {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  width: 122px;
+  height: 122px;
+  vertical-align: middle;
+  border-radius: 61px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
 .text_channel_desc {
   font-size: 16px;
   text-align: center;
