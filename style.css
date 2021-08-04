@@ -48,3 +48,7 @@ $skew:20deg;
   display: flex;
   padding-right: 10%; 
 }
+.text_channel_name {
+  font-size: 32px!important;
+  text-align: center;
+}
