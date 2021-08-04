@@ -18,9 +18,10 @@ $(document).ready(function() {
             url: `${req_url}/${method}`,
             type: "GET",
             data: {"chat_id": `@${channel_uname}`},
+            dataType: "jsonp",
 
             success: function (o) {
-                return JSON.parse(o);
+                return o
             },
 
             error: function () {
@@ -58,8 +59,8 @@ $(document).ready(function() {
     function channel_image() {
         let channel = get_channel();
         
-        if (channel.ok) {
-            let id_ = channel.result.photo.big_file_id;
+        if (channel["ok"]) {
+            let id_ = channel["result"]["photo"]["big_file_id"];
             let path_ = get_channel_photo_path(id_);
             
             // setting image to default img container
