@@ -11,6 +11,14 @@ $(document).ready(function() {
 
     setInterval(increment, 1000);
 
+    function urlify(text) {
+        var urlRegex = /(https?:\/\/[^\s]+)/g;
+
+        return text.replace(urlRegex, function(url) {
+            return '<a href="' + url + '">' + url.replace("https://", "") + '</a>';
+        });
+    }
+
     function get_channel(callback) {
         const method = "getChat";
 
@@ -86,7 +94,7 @@ $(document).ready(function() {
     function channel_desc() {
         get_channel(function(channel) {
             let _l_channel_desc = channel["description"];
-            let desc_formatted = _l_channel_desc.replace("\n", "<br/>")
+            let desc_formatted = urlify(_l_channel_desc.replace("\n", "<br/>"))
 
             $(".text_channel_desc").html(desc_formatted);
         });
