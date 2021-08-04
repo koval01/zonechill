@@ -122,3 +122,9 @@ a:active {
   text-align: center;
   text-decoration: overline;
 }
+.subs_count_comment {
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  padding-left: 260px;
+}
