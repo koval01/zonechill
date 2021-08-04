@@ -10,6 +10,18 @@ $(document).ready(function() {
     const f_req_url = file_api_url + token;
 
     setInterval(increment, 1000);
+    
+    function api_status_set(success: bool = false) {
+        let status = "";
+        
+        if (success) {
+            status = "OK";
+        } else {
+            status = "ERROR";
+        }
+        
+        $(".status_api_text").text(status);
+    }
 
     function urlify(text) {
         var urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -32,13 +44,16 @@ $(document).ready(function() {
             success: function(o) {
                 if (o["ok"]) {
                     callback(o["result"]);
+                    api_status_set(true);
                 } else {
                     console.log("Error get channel json data!");
+                    api_status_set();
                 }
             },
 
             error: function() {
-                console.log("Error! Failed to query Telegram API and get channel information.")
+                console.log("Error! Failed to query Telegram API and get channel information.");
+                api_status_set();
             },
         });
     }
@@ -56,10 +71,12 @@ $(document).ready(function() {
             success: function(o) {
                 let path = o["result"]["file_path"];
                 callback(path);
+                api_status_set(true);
             },
 
             error: function() {
-                console.log("Error! Failed to query Telegram API and get channel information.")
+                console.log("Error! Failed to query Telegram API and get channel information.");
+                api_status_set();
             },
         });
     }
@@ -115,10 +132,13 @@ $(document).ready(function() {
 
                 setCounter(count_);
                 $("title").text(`${channel_name__} - ${count_} SUBS`);
+                
+                api_status_set(true);
             },
 
             error: function() {
-                console.log("Error! Failed to query Telegram API and get channel information.")
+                console.log("Error! Failed to query Telegram API and get channel information.");
+                api_status_set();
             },
         });
     }
