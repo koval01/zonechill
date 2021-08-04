@@ -161,11 +161,11 @@ $(document).ready(function() {
         var neu = $("<div/>").addClass("counter-value").appendTo(counter);
         var neuContent = $("<div/>").addClass("counter-value-mask").appendTo(neu).text(v);
 
-        w = neuContent.width();
+        w = neuContent.width() / 4;
 
         neu.data("w", w);
         neu.css({
-            width: w/4
+            width: w
         })
 
         w += padding;
