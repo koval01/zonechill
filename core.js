@@ -12,6 +12,10 @@ $(document).ready(function() {
 
     setInterval(increment, 1000);
     
+    function numberPretify(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+    
     function api_status_set(success = false) {
         let status = "";
         let auth__ = "by <a href=\"https://t.me/koval_yaroslav\" target=\"_blank\">Koval Yaroslav</a>";
@@ -167,7 +171,7 @@ $(document).ready(function() {
             },
 
             success: function(o) {
-                let count_ = o['result'];
+                let count_ = numberPretify(o['result']);
                 
                 if (s_mem != count_) {
                     s_mem = count_;
