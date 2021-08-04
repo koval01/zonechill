@@ -6,20 +6,22 @@ $(document).ready(function() {
 
     var channel_name__ = "";
 
-    const req_url =  api_url+token;
-    const f_req_url = file_api_url+token;
+    const req_url = api_url + token;
+    const f_req_url = file_api_url + token;
 
     setInterval(increment, 1000);
-    
+
     function get_channel(callback) {
         const method = "getChat";
-        
+
         $.ajax({
             url: `${req_url}/${method}`,
             type: "GET",
-            data: {"chat_id": `@${channel_uname}`},
+            data: {
+                "chat_id": `@${channel_uname}`
+            },
 
-            success: function (o) {
+            success: function(o) {
                 if (o["ok"]) {
                     callback(o["result"]);
                 } else {
@@ -27,39 +29,41 @@ $(document).ready(function() {
                 }
             },
 
-            error: function () {
+            error: function() {
                 console.log("Error! Failed to query Telegram API and get channel information.")
             },
         });
     }
-    
+
     function get_channel_photo_path(photo_file_id, callback) {
         const method = "getFile";
-        
+
         $.ajax({
             url: `${req_url}/${method}`,
             type: "GET",
-            data: {"file_id": photo_file_id},
+            data: {
+                "file_id": photo_file_id
+            },
 
-            success: function (o) {
+            success: function(o) {
                 let path = o["result"]["file_path"];
                 callback(path);
             },
 
-            error: function () {
+            error: function() {
                 console.log("Error! Failed to query Telegram API and get channel information.")
             },
         });
     }
-    
+
     function get_channel_photo(photo_path) {
         return `${f_req_url}/${photo_path}`;
     }
-    
+
     function image_set__(path_) {
         $(".image_channel__").attr("src", path_);
     }
-    
+
     function channel_image() {
         get_channel(function(channel) {
             let id_ = channel["photo"]["big_file_id"];
@@ -69,7 +73,7 @@ $(document).ready(function() {
             });
         });
     }
-    
+
     function channel_name() {
         get_channel(function(channel) {
             let _l_channel_name = channel["title"];
@@ -94,16 +98,18 @@ $(document).ready(function() {
         $.ajax({
             url: `${req_url}/${method}`,
             type: "GET",
-            data: {"chat_id": `@${channel_uname}`},
+            data: {
+                "chat_id": `@${channel_uname}`
+            },
 
-            success: function (o) {
+            success: function(o) {
                 let count_ = o['result'];
 
                 setCounter(count_);
                 $("title").text(`${channel_name__} - ${count_} SUBS`);
             },
 
-            error: function () {
+            error: function() {
                 console.log("Error! Failed to query Telegram API and get channel information.")
             },
         });
@@ -116,40 +122,56 @@ $(document).ready(function() {
     }
 
     function setCounter(v) {
-        var counter=$(".counter");
-        var old=counter.children(".counter-value");
-        var oldContent=old.children(".counter-value-mask");
+        var counter = $(".counter");
+        var old = counter.children(".counter-value");
+        var oldContent = old.children(".counter-value-mask");
 
-        var t=0.4;
-        var d=t*0.0;
-        var d2=t*0.3;
-        var padding=55;
-        var offset=5;
-        var w=old.data("w");
+        var t = 0.4;
+        var d = t * 0.0;
+        var d2 = t * 0.3;
+        var padding = 55;
+        var offset = 5;
+        var w = old.data("w");
 
-        w+=padding;
-        TweenMax.to(old,t,{delay:d,x:w,ease:Quad.easeIn});
-        TweenMax.to(oldContent,t,{delay:d,x:-(w-offset),ease:Quad.easeIn});
+        w += padding;
+        TweenMax.to(old, t, {
+            delay: d,
+            x: w,
+            ease: Quad.easeIn
+        });
+        TweenMax.to(oldContent, t, {
+            delay: d,
+            x: -(w - offset),
+            ease: Quad.easeIn
+        });
 
 
-        setTimeout(function(){old.remove()},t*1000);
-        
-        var neu=$("<div/>").addClass("counter-value").appendTo(counter);
-        var neuContent=$("<div/>").addClass("counter-value-mask").appendTo(neu).text(v);
-        
-        w=neuContent.width();
-        
-        neu.data("w",w);
+        setTimeout(function() {
+            old.remove()
+        }, t * 1000);
+
+        var neu = $("<div/>").addClass("counter-value").appendTo(counter);
+        var neuContent = $("<div/>").addClass("counter-value-mask").appendTo(neu).text(v);
+
+        w = neuContent.width();
+
+        neu.data("w", w);
         neu.css({
-            width:w
+            width: w
         })
 
-        w+=padding;
-        TweenMax.from(neu,t,{delay:d2,x:-w});
-        TweenMax.from(neuContent,t,{delay:d2,x:w-offset});
+        w += padding;
+        TweenMax.from(neu, t, {
+            delay: d2,
+            x: -w
+        });
+        TweenMax.from(neuContent, t, {
+            delay: d2,
+            x: w - offset
+        });
     }
-    
+
     // ready call
     call_();
 
-  })
+})
