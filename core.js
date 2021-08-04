@@ -79,6 +79,15 @@ $(document).ready(function() {
         });
     }
 
+    function channel_desc() {
+        get_channel(function(channel) {
+            let _l_channel_desc = channel["description"];
+            let desc_formatted = _l_channel_desc.replace("\n", "<br/>")
+
+            $(".text_channel_desc").text(desc_formatted);
+        });
+    }
+
     function increment() {
         const method = "getChatMemberCount";
 
@@ -103,6 +112,7 @@ $(document).ready(function() {
     function call_() {
         channel_image();
         channel_name();
+        channel_desc();
     }
 
     function setCounter(v) {
