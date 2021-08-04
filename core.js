@@ -94,7 +94,7 @@ $(document).ready(function() {
     function channel_desc() {
         get_channel(function(channel) {
             let _l_channel_desc = channel["description"];
-            let desc_formatted = urlify(_l_channel_desc.replace("\n", "<br/>"))
+            let desc_formatted = urlify(_l_channel_desc.replace(/\n/g, '<br/>'))
 
             $(".text_channel_desc").html(desc_formatted);
         });
