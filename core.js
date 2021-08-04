@@ -85,6 +85,32 @@ $(document).ready(function() {
         return `${f_req_url}/${photo_path}`;
     }
 
+    function create_pinned_message() {
+        get_pinned_message(function(data) {
+            // $("").html();
+        });
+    }
+
+    function get_pinned_message(callback) {
+        get_channel(function(data) {
+            let msg = data["pinned_message"];
+            let link_msg = `https://t.me/${channel_uname}/${msg['message_id']}`;
+
+            try {
+                caption = msg['caption']
+            } catch {
+                console.log("Error get message caption!")
+            }
+
+            body_message = {
+                "text": caption,
+                "link": link_msg,
+            }
+
+            callback(body_message)
+        });
+    }
+ 
     function image_set__(path_) {
         $(".channel_image_").attr("src", path_);
     }
@@ -147,6 +173,7 @@ $(document).ready(function() {
         channel_image();
         channel_name();
         channel_desc();
+        create_pinned_message();
     }
 
     function setCounter(v) {
