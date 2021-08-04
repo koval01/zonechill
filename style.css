@@ -72,6 +72,7 @@ a:active {
 .subs_count_text {
   margin: 0!important;
   text-align: center;
+  color: #ccc;
 }
 .status_api_text {
   font-size: 12px;
