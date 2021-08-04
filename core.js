@@ -20,7 +20,7 @@ $(document).ready(function() {
             status = "ERROR";
         }
         
-        $(".status_api_text").text(status);
+        $(".status_api_text").text(`Telegram API: ${status}`);
     }
 
     function urlify(text) {
