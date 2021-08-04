@@ -108,4 +108,12 @@ a:active {
 .pinned_message_caption {
   font-size: 14px;
   text-align: center;
+  color: #000;
+}
+.pinned_message_body {
+  background: #eee;
+  border-radius: 12px;
+  max-width: 60%;
+  padding: 1px;
+  margin: auto;
 }
