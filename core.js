@@ -4,7 +4,7 @@ $(document).ready(function() {
     const token = "1928555652:AAGk3oYaHlx-MLLnclv8T2TVtJhlTXX9oJc";
     const channel_uname = "zonechill";
 
-    var n=0;
+    var channel_name__ = "";
 
     const req_url =  api_url+token;
     const f_req_url = file_api_url+token;
@@ -72,7 +72,10 @@ $(document).ready(function() {
     
     function channel_name() {
         get_channel(function(channel) {
-            $(".text_channel_name").text(channel["title"]);
+            let _l_channel_name = channel["title"];
+
+            $(".text_channel_name").text(_l_channel_name);
+            channel_name__ = _l_channel_name;
         });
     }
 
@@ -88,7 +91,7 @@ $(document).ready(function() {
                 let count_ = o['result'];
 
                 setCounter(count_);
-                $("title").text(`CHILL ZONE - ${count_} SUBS`);
+                $("title").text(`${channel_name__} - ${count_} SUBS`);
             },
 
             error: function () {
