@@ -24,21 +24,6 @@ $(document).ready(function() {
         
         $(".status_api_text").html(`Telegram API: ${status} | ${auth__}`);
     }
-    
-    function urlify(inputText) {
-        var replacedText, replacePattern1, replacePattern2, replacePattern3;
-
-        replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-        replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
-
-        replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
-        replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>');
-
-        replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
-        replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>');
-
-        return replacedText;
-    }
 
     function get_channel(callback) {
         const method = "getChat";
@@ -161,7 +146,7 @@ $(document).ready(function() {
     function channel_desc() {
         get_channel(function(channel) {
             let _l_channel_desc = channel["description"];
-            let desc_formatted = urlify(_l_channel_desc.replace(/\n/g, '<br/>'))
+            let desc_formatted = linkifyHtml(_l_channel_desc.replace(/\n/g, '<br/>'), {defaultProtocol: 'https'});
 
             $(".text_channel_desc").html(desc_formatted);
         });
