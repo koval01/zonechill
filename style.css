@@ -57,6 +57,12 @@ $skew:20deg;
   font-size: 16px;
   text-align: center;
 }
+.text_channel_desc_box {
+  justify-content: center;
+  max-width: 3em;
+  margin-left: auto;
+  margin-right: auto;
+}
 a {
   color: #a6a6a6;
 }
