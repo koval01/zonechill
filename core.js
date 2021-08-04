@@ -146,9 +146,13 @@ $(document).ready(function() {
     function channel_desc() {
         get_channel(function(channel) {
             let _l_channel_desc = channel["description"];
-            let desc_formatted = linkifyHtml(_l_channel_desc.replace(/\n/g, '<br/>'), {defaultProtocol: 'https'});
+            let desc_formatted = _l_channel_desc.replace(/\n/g, '<br/>');
 
             $(".text_channel_desc").html(desc_formatted);
+            
+            $('.text_channel_desc').linkify({
+                target: "_blank"
+            });
         });
     }
 
