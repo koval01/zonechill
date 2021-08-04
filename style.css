@@ -1,39 +1,38 @@
 @import "compass/css3";
 
 body{
-  background:#0e0e10;
-  color:white;
-  font-family:Roboto, sans-serif;
-  font-size:120px;
+  background: #0e0e10;
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 120px;
 }
 .counter{
-  position:relative;
-  left:60px;
-  top:40px;
+  position: relative;
+  left: 60px;
+  top: 40px;
 }
 .credit{
-  position:fixed;
-  bottom:20px;
-  left:60px;
-  font-size:16px;
+  position: fixed;
+  bottom: 20px;
+  left: 60px;
+  font-size: 16px;
 }
 $skew:20deg;
 .counter-value{
-  position:absolute;
-  transform-origin:0 100%;
-  transform:skew($skew,0);
+  position: absolute;
+  transform-origin: 0 100%;
+  transform: skew($skew,0);
 
-  overflow:hidden;
-  //border:1px dotted green;
-  padding-right:30px;
-  height:1em;
+  overflow: hidden;
+  padding-right: 30px;
+  height: 1em;
 }
 .counter-value-mask{
-  position:absolute;
-  transform-origin:0 100%;
-  transform:skew(-$skew);
-  overflow:hidden;
-  line-height:1em;
+  position: absolute;
+  transform-origin: 0 100%;
+  transform: skew(-$skew);
+  overflow: hidden;
+  line-height: 1em;
 }
 .noselect {
   -webkit-touch-callout: none;
