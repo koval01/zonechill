@@ -20,7 +20,11 @@ $(document).ready(function() {
             data: {"chat_id": `@${channel_uname}`},
 
             success: function (o) {
-                callback(o);
+                if (o["ok"]) {
+                    callback(o["result"]);
+                } else {
+                    console.log("Error get channel json data!");
+                }
             },
 
             error: function () {
@@ -58,15 +62,17 @@ $(document).ready(function() {
     
     function channel_image() {
         get_channel(function(channel) {
-            if (channel["ok"]) {
-                let id_ = channel["result"]["photo"]["big_file_id"];
+            let id_ = channel["photo"]["big_file_id"];
 
-                get_channel_photo_path(id_, function(path_) {
-                    image_set__(get_channel_photo(path_));
-                });
-            } else {
-                console.log("Error get channel json data!");
-            }
+            get_channel_photo_path(id_, function(path_) {
+                image_set__(get_channel_photo(path_));
+            });
+        });
+    }
+    
+    function channel_name() {
+        get_channel(function(channel) {
+            $(".text_channel_name").text(channel["title"]);
         });
     }
 
@@ -89,6 +95,11 @@ $(document).ready(function() {
                 console.log("Error! Failed to query Telegram API and get channel information.")
             },
         });
+    }
+
+    function call_() {
+        channel_image();
+        channel_name();
     }
 
     function setCounter(v) {
@@ -126,6 +137,6 @@ $(document).ready(function() {
     }
     
     // ready call
-    channel_image();
-    
+    call_();
+
   })
