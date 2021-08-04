@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     setInterval(increment, 1000);
     
-    function api_status_set(success: bool = false) {
+    function api_status_set(success = false) {
         let status = "";
         
         if (success) {
