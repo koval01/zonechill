@@ -130,53 +130,9 @@ $(document).ready(function() {
     }
 
     function setCounter(v) {
-        var counter = $(".counter");
-        var old = counter.children(".counter-value");
-        var oldContent = old.children(".counter-value-mask");
-
-        var t = 0.4;
-        var d = t * 0.0;
-        var d2 = t * 0.3;
-        var padding = 55;
-        var offset = 5;
-        var w = old.data("w");
-
-        w += padding;
-        TweenMax.to(old, t, {
-            delay: d,
-            x: w,
-            ease: Quad.easeIn
-        });
-        TweenMax.to(oldContent, t, {
-            delay: d,
-            x: -(w - offset),
-            ease: Quad.easeIn
-        });
-
-
-        setTimeout(function() {
-            old.remove()
-        }, t * 1000);
-
-        var neu = $("<p/>").addClass("counter-value").appendTo(counter);
-        var neuContent = $("<p/>").addClass("counter-value-mask").appendTo(neu).text(v);
-
-        w = neuContent.width() / 4;
-
-        neu.data("w", w);
-        neu.css({
-            width: w
-        })
-
-        w += padding;
-        TweenMax.from(neu, t, {
-            delay: d2,
-            x: -w
-        });
-        TweenMax.from(neuContent, t, {
-            delay: d2,
-            x: w - offset
-        });
+        let counter = $(".subs_count_text");
+        
+        counter.text(v);
     }
 
     // ready call
