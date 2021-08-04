@@ -158,8 +158,8 @@ $(document).ready(function() {
             old.remove()
         }, t * 1000);
 
-        var neu = $("<div/>").addClass("counter-value").appendTo(counter);
-        var neuContent = $("<div/>").addClass("counter-value-mask").appendTo(neu).text(v);
+        var neu = $("<p/>").addClass("counter-value").appendTo(counter);
+        var neuContent = $("<p/>").addClass("counter-value-mask").appendTo(neu).text(v);
 
         w = neuContent.width() / 4;
 
