@@ -3,8 +3,10 @@
 body{
   background: #0e0e10;
   color: white;
-  font-family: Roboto, sans-serif;
   font-size: 120px;
+  font-family: 'Poppins', sans-serif
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 $skew:20deg;
 .noselect {
