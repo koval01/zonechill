@@ -88,7 +88,7 @@ a:active {
 .pinned_message_body {
   background: #eee;
   border-radius: 12px;
-  max-width: 60%;
+  max-width: 700px;
   padding: 1px;
   margin: auto;
 }
