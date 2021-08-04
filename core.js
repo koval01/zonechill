@@ -11,17 +11,16 @@ $(document).ready(function() {
 
     setInterval(increment, 1000);
     
-    function get_channel() {
+    function get_channel(callback) {
         const method = "getChat";
         
         $.ajax({
             url: `${req_url}/${method}`,
             type: "GET",
             data: {"chat_id": `@${channel_uname}`},
-            dataType: "jsonp",
 
             success: function (o) {
-                return JSON.parse(o);
+                callback(o);
             },
 
             error: function () {
@@ -30,7 +29,7 @@ $(document).ready(function() {
         });
     }
     
-    function get_channel_photo_path(photo_file_id) {
+    function get_channel_photo_path(photo_file_id, callback) {
         const method = "getFile";
         
         $.ajax({
@@ -39,7 +38,8 @@ $(document).ready(function() {
             data: {"file_id": photo_file_id},
 
             success: function (o) {
-                return o['file_path'];
+                let path = o["result"]["file_path"];
+                callback(path);
             },
 
             error: function () {
@@ -57,17 +57,17 @@ $(document).ready(function() {
     }
     
     function channel_image() {
-        let channel = get_channel();
-        
-        if (channel.ok) {
-            let id_ = channel["result"]["photo"]["big_file_id"];
-            let path_ = get_channel_photo_path(id_);
-            
-            // setting image to default img container
-            image_set__(get_channel_photo(path_));
-        } else {
-            console.log("Error get channel json data!");
-        }
+        get_channel(function(channel) {
+            if (channel["ok"]) {
+                let id_ = channel["result"]["photo"]["big_file_id"];
+
+                get_channel_photo_path(id_, function(path_) {
+                    image_set__(get_channel_photo(path_));
+                });
+            } else {
+                console.log("Error get channel json data!");
+            }
+        });
     }
 
     function increment() {
