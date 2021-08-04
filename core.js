@@ -21,7 +21,7 @@ $(document).ready(function() {
             dataType: "jsonp",
 
             success: function (o) {
-                return o
+                return JSON.parse(o);
             },
 
             error: function () {
@@ -59,7 +59,7 @@ $(document).ready(function() {
     function channel_image() {
         let channel = get_channel();
         
-        if (channel["ok"]) {
+        if (channel.ok) {
             let id_ = channel["result"]["photo"]["big_file_id"];
             let path_ = get_channel_photo_path(id_);
             
