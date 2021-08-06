@@ -7,6 +7,9 @@ $(document).ready(function() {
     const yt_tokens = [
         "AIzaSyCko11Nnujt1K-YPEhwYAgp3S6IpsIuxeA",
         "AIzaSyAEnbBY3SPdwImzX5gek4djK7mrNNd-fow",
+        "AIzaSyDLXVw5lO1QEFR7ob21iLj_4e0kOON5oEw",
+        "AIzaSyAQBgSsK2goleYjY3fINWnNQfu9gX6zhdQ",
+        "",
     ];
     const yt_api_url = "https://www.googleapis.com/youtube/v3";
     const yt_channel_elza = "UCUEoKLBj-lelT29QAEkkg2A";
