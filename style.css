@@ -3,7 +3,7 @@
 body{
   background: #0e0e10;
   color: white;
-  font-size: 120px;
+  font-size: 16px;
   font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,6 +39,7 @@ $skew:20deg;
   margin-right: auto;
   margin-left: auto;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 .text_channel_desc {
   font-size: 16px;
@@ -46,9 +47,12 @@ $skew:20deg;
 }
 .text_channel_desc_box {
   justify-content: center;
-  max-width: 3em;
+  max-width: 23em;
   margin-left: auto;
   margin-right: auto;
+}
+.comments_block_box {
+  max-width: 30em!important;
 }
 a {
   color: #a6a6a6;
@@ -73,8 +77,9 @@ a:active {
   margin: 0!important;
   text-align: center;
   color: #ccc;
+  font-size: 120px!important;
 }
-.status_api_text {
+.credits_zone_ {
   font-size: 12px;
   color: #747474;
   text-align: center;
@@ -85,18 +90,20 @@ a:active {
   font-size: 14px;
   text-align: center;
   color: #000;
+  padding-top: 5px;
 }
-.pinned_message_body {
+.pinned_message_body, .last_video_body {
   background: #eee;
   border-radius: 12px;
   max-width: 700px;
   padding: 1px;
   margin: auto;
 }
-.pinned_message_comment {
+.pinned_message_comment, .last_video_comment {
   font-size: 16px;
   text-align: center;
   text-decoration: overline;
+  margin-top: 15px;
 }
 .subs_count_comment {
   margin: 0;
@@ -104,4 +111,148 @@ a:active {
   text-align: center;
   padding-left: 275px;
   text-transform: uppercase;
+}
+.header-second {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0;
+  margin-top: 15px!important;
+}
+.header-menu-item {
+  position: relative;
+  cursor: pointer;
+}
+.link_header_ {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  text-decoration: none;
+  margin: 5px;
+}
+ol, ul {
+  list-style: none;
+}
+@media only screen and (min-width: 9999px) {
+  .header-menu {
+      width: calc(100vw - 110px);
+  }
+}
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+.header-menu-item:not(:hover)::after {
+  -webkit-transform: scalex(0);
+  transform: scalex(0);
+}
+.header-menu-item::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: -3px;
+  background: #fff;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s,-webkit-transform .5s;
+}
+.credits_icons_ {
+  width: 11px!important;
+  height: 11px!important;
+}
+.video_title_yt {
+  font-size: 13px!important;
+}
+.channel_title_icon {
+  vertical-align: -3px;
+}
+a, .channel_link_yt {
+  color: #a6a6a6!important;
+  text-decoration: none!important;
+}
+a:visited, .channel_link_yt {
+  color: #a6a6a6!important;
+}
+a:focus, .channel_link_yt {
+  color: #a6a6a6!important;
+}
+a:hover, .channel_link_yt {
+  color: #a6a6a6!important;
+}
+a:active, .channel_link_yt {
+  color: #a6a6a6!important;
+}
+@media (min-width: 768px) {
+  .row-cols-md-3 > * {
+      flex: 0 0 auto;
+      width: 50%!important;
+  }
+}
+.col {
+  height: 0%!important;
+}
+.card {
+  background-color: #000!important;
+  border: 1px solid rgba(0, 0, 0, 1)!important;
+}
+#BackgroundObject {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+.content_block_ {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.88);
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh!important;
+}
+.background_text_ {
+  font-size: 50px;
+  text-transform: uppercase;
+  display: table-caption;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.separator_header_els {
+  margin: 0 auto;
+  margin-bottom: 2px;
+}
+.error_api_text {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px!important;
+}
+.video_title_yt {
+  font-size: 16px!important;
+}
+.video_description_yt {
+  font-size: 14px!important;
+}
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.comments_block_box:first-child {
+  border-radius: 12px!important;
 }
