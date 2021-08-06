@@ -309,6 +309,10 @@ $(document).ready(function() {
     function get_channel_photo(photo_path) {
         return `${f_req_url}/${photo_path}`;
     }
+    
+    function set_channel_link_() {
+        $("#tg_channel_link_share").attr("href", "https://t.me/"+channel_uname);
+    }
 
     function create_pinned_message() {
         get_pinned_message(function(data) {
@@ -432,6 +436,7 @@ $(document).ready(function() {
         channel_image();
         channel_name();
         channel_desc();
+        set_channel_link_();
 
         set_pin_comments();
 
