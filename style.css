@@ -179,20 +179,20 @@ li {
 .channel_title_icon {
   vertical-align: -3px;
 }
-a, .channel_link_yt {
+a, .channel_link_yt, .channel_link_yt {
   color: #a6a6a6!important;
   text-decoration: none!important;
 }
-a:visited, .channel_link_yt {
+a:visited, .channel_link_yt, .channel_link_yt {
   color: #a6a6a6!important;
 }
-a:focus, .channel_link_yt {
+a:focus, .channel_link_yt, .channel_link_tg {
   color: #a6a6a6!important;
 }
-a:hover, .channel_link_yt {
+a:hover, .channel_link_yt, .channel_link_tg {
   color: #a6a6a6!important;
 }
-a:active, .channel_link_yt {
+a:active, .channel_link_yt, .channel_link_tg {
   color: #a6a6a6!important;
 }
 @media (min-width: 768px) {
