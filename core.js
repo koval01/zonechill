@@ -11,6 +11,8 @@ $(document).ready(function() {
         "AIzaSyAQBgSsK2goleYjY3fINWnNQfu9gX6zhdQ",
         "AIzaSyAah-ibNXzJx8ejbMsfPtYY1mrQTMzW7Rs",
         "AIzaSyCbDW_Tew_bDVQpBpZdKzNMB4yWO2a9ijw",
+        "AIzaSyCyYTbCtXUAiLyrrBZ7abMiDCttuHOXoVc",
+        "AIzaSyB5L9fS7UFE6Ew9uV1v7FSTQp2lEf82-_E",
     ];
     const yt_api_url = "https://www.googleapis.com/youtube/v3";
     const yt_channel_elza = "UCUEoKLBj-lelT29QAEkkg2A";
