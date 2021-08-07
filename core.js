@@ -423,7 +423,8 @@ $(document).ready(function() {
 
     function channel_yt_set() {
         get_channel_data_yt(function(data) {
-            console.log(data);
+            $("#youtube_subs").html("");
+            $("#youtube_views").html("");
         });
     }
 
