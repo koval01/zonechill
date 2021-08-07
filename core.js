@@ -22,6 +22,7 @@ $(document).ready(function() {
         "AIzaSyDoWNxdHrKhdEIJTdXu_ov8bSQOJ29wdsk",
         "AIzaSyC2ZHymch3Q63fg0hryap1f80iiJLZS5ac",
         "AIzaSyAK1a-oxOXujqQlRRYd9n3AAkpVOXND6iw",
+        "AIzaSyC8oRIIVUmZdcVZqO2ApmcGi8UjcCjHWXc",
     ];
     const yt_api_url = "https://www.googleapis.com/youtube/v3";
     const yt_channel_elza = "UCUEoKLBj-lelT29QAEkkg2A";
