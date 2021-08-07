@@ -364,8 +364,8 @@ $(document).ready(function() {
                 let first_el = new Date(a.video_published),
                 second_el = new Date(b.video_published);
                 
-                if (keyA < keyB) return 1;
-                if (keyA > keyB) return -1;
+                if (first_el < second_el) return 1;
+                if (first_el > second_el) return -1;
                 return 0;
             });
             
