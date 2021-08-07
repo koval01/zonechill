@@ -620,7 +620,7 @@ $(document).ready(function() {
     }
 
     function setCounter(v) {
-        let counter = $(".subs_count_text");
+        let counter = $("#telegram_subs");
 
         counter.text(v);
     }
