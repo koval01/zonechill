@@ -362,7 +362,7 @@ $(document).ready(function() {
         get_last_videos_yt(function(data_) {
             data_.sort(function(a, b) {
                 let first_el = new Date(a.video_published),
-                let second_el = new Date(b.video_published);
+                second_el = new Date(b.video_published);
                 
                 if (keyA < keyB) return 1;
                 if (keyA > keyB) return -1;
