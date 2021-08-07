@@ -359,10 +359,10 @@ $(document).ready(function() {
     }
 
     function set_last_video_yt() {
-        get_last_videos_yt(function(data) {
-            if (data.length) {
-                for (let i = 0; i < data.length; i++) {
-                    const array_ = data[i];
+        get_last_videos_yt(function(data_) {
+            if (data_.length) {
+                for (let i = 0; i < data_.length; i++) {
+                    const array_ = data_[i];
 
                     get_video_yt_stat(function(data) {
                         const template_video_block = `
@@ -406,8 +406,7 @@ $(document).ready(function() {
                     }, array_["video_id"]);
                 }
             } else {
-                // $("#youtube_videos_container_").append("<p class=\"error_api_text\">Произошла ошибка! Не удалось получить массив данных о видео.</p>");
-                // pass
+                console.log("Error video get!");
             }
         });
     }
