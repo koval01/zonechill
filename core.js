@@ -489,6 +489,11 @@ $(document).ready(function() {
     }
 
     function create_pinned_message() {
+        function pin_error_() {
+            $("#pin_container_home_").remove();
+            console.log("Pinned message set skipped.");
+        }
+        
         get_pinned_message(function(data) {
             if (data) {
                 try {
@@ -496,10 +501,10 @@ $(document).ready(function() {
 
                     $(".pinned_message_caption").html(message_pin_body);
                 } catch {
-                    // pass
+                    pin_error_();
                 }
             } else {
-                console.log("Pinned message set skipped.")
+                pin_error_();
             }
         });
     }
