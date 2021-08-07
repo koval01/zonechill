@@ -361,14 +361,14 @@ $(document).ready(function() {
 
     function set_last_video_yt() {
         get_last_videos_yt(function(data_) {
-            data_.sort(function(a, b) {
-                let first_el = new Date(a.video_published),
-                second_el = new Date(b.video_published);
+//             data_.sort(function(a, b) {
+//                 let first_el = new Date(a.video_published),
+//                 second_el = new Date(b.video_published);
                 
-                if (first_el < second_el) return 1;
-                if (first_el > second_el) return -1;
-                return 0;
-            });
+//                 if (first_el < second_el) return 1;
+//                 if (first_el > second_el) return -1;
+//                 return 0;
+//             });
             
             if (data_.length) {
                 for (let i = 0; i < data_.length; i++) {
