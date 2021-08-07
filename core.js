@@ -330,7 +330,9 @@ $(document).ready(function() {
 
                     for (let i = 0; i < items.length; i++) {
                         const snippet_ = items[i]["snippet"];
-                        const published = utc_to_user_tz(parseInt(snippet_["publishTime"]));
+                        const published = utc_to_user_tz(snippet_["publishTime"]);
+                        console.log(snippet_["publishTime"]);
+                        console.log(published);
 
                         array_videos.push({
                             "video_id": items[i]["id"]["videoId"],
