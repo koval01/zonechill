@@ -423,10 +423,10 @@ $(document).ready(function() {
 
     function channel_yt_set() {
         get_channel_data_yt(function(data) {
-            const stat_yt_ = data["items"]["statistics"];
+            const stat_yt_ = data["items"][0]["statistics"];
             
-            $("#youtube_subs").html(`<i class="fas fa-users"></i> ${NumbersFormatter(stat_yt_["subscriberCount"])}`);
-            $("#youtube_views").html(`<i class="far fa-eye"></i> ${NumbersFormatter(stat_yt_["viewCount"])}`);
+            $("#youtube_subs").html(`<i class="fas fa-users"></i> ${NumbersFormatter(parseInt(stat_yt_["subscriberCount"]))}`);
+            $("#youtube_views").html(`<i class="far fa-eye"></i> ${NumbersFormatter(parseInt(stat_yt_["viewCount"]))}`);
         });
     }
 
