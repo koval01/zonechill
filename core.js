@@ -385,7 +385,7 @@ $(document).ready(function() {
                                     <i class="far fa-heart"></i> ${NumbersFormatter(data["likeCount"])} |
                                     <i class="far fa-comments"></i> ${NumbersFormatter(data["commentCount"])}
                                     <br/>
-                                    <zonechill id="${array_['video_id']}_pub">Опубликовано</zonechill> 
+                                    <p id="${array_['video_id']}_pub"></p> 
                                     <script>setInterval(function(){$("#${array_['video_id']}_pub").text(timeAgoConvert(new Date(Date.now()-(Date.now()-{{ el.time }})))+" назад")},1000)</script>
                                 </small>
                                 </div>
