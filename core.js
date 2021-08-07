@@ -1,3 +1,143 @@
+function timeAgoConvert(date) {
+    let seconds = Math.floor((new Date() - date) / 1000);
+    let interval = seconds / 31536000;
+    let re = null;
+
+    if (interval > 1) {
+        time_ = Math.floor(interval);
+        one_l = parseInt(time_.toString().substr(-1));
+        two_l = parseInt(time_.toString().substr(-2));
+
+        if (one_l === 1 && two_l < 11) {
+            return 'год';
+        }
+        else if (two_l > 20 && one_l === 1) {
+            return time_ + ' год';
+        }
+        else if (two_l > 20 && one_l > 1 && one_l < 5) {
+            return time_ + ' года';
+        }
+        else if (5 > one_l && one_l > 1 && two_l < 11) {
+            return time_ + ' года';
+        }
+        else {
+            return time_ + ' лет';
+        }
+    }
+
+    interval = seconds / 2592000;
+    if (interval > 1) {
+        time_ = Math.floor(interval);
+        one_l = parseInt(time_.toString().substr(-1));
+        two_l = parseInt(time_.toString().substr(-2));
+
+        if (one_l === 1 && two_l < 11) {
+            return 'месяц';
+        }
+        else if (two_l > 20 && one_l === 1) {
+            return time_ + ' месяц';
+        }
+        else if (two_l > 20 && one_l > 1 && one_l < 5) {
+            return time_ + ' месяца';
+        }
+        else if (5 > one_l && one_l > 1 && two_l < 11) {
+            return time_ + ' месяца';
+        }
+        else {
+            return time_ + ' месяцев';
+        }
+    }
+
+    interval = seconds / 86400;
+    if (interval > 1) {
+        time_ = Math.floor(interval);
+        one_l = parseInt(time_.toString().substr(-1));
+        two_l = parseInt(time_.toString().substr(-2));
+
+        if (one_l === 1 && two_l < 11) {
+            return 'день';
+        }
+        else if (two_l > 20 && one_l === 1) {
+            return time_ + ' день';
+        }
+        else if (two_l > 20 && one_l > 1 && one_l < 5) {
+            return time_ + ' дня';
+        }
+        else if (5 > one_l && one_l > 1 && two_l < 11) {
+            return time_ + ' дня';
+        }
+        else {
+            return time_ + ' дней';
+        }
+    }
+
+    interval = seconds / 3600;
+    if (interval > 1) {
+        time_ = Math.floor(interval);
+        one_l = parseInt(time_.toString().substr(-1));
+        two_l = parseInt(time_.toString().substr(-2));
+
+        if (one_l === 1 && two_l < 11) {
+            return 'час';
+        }
+        else if (two_l > 20 && one_l === 1) {
+            return time_ + ' час';
+        }
+        else if (two_l > 20 && one_l > 1 && one_l < 5) {
+            return time_ + ' часа';
+        }
+        else if (5 > one_l && one_l > 1 && two_l < 11) {
+            return time_ + ' часа';
+        }
+        else {
+            return time_ + ' часов';
+        }
+    }
+
+    interval = seconds / 60;
+    if (interval > 1) {
+        time_ = Math.floor(interval);
+        one_l = parseInt(time_.toString().substr(-1));
+        two_l = parseInt(time_.toString().substr(-2));
+
+        if (one_l === 1 && two_l < 11) {
+            return 'минуту';
+        }
+        else if (two_l > 20 && one_l === 1) {
+            return time_ + ' минуту';
+        }
+        else if (two_l > 20 && one_l > 1 && one_l < 5) {
+            return time_ + ' минуты';
+        }
+        else if (5 > one_l && one_l > 1 && two_l < 11) {
+            return time_ + ' минуты';
+        }
+        else {
+            return time_ + ' минут';
+        }
+    }
+
+    time_ = Math.floor(seconds);
+    one_l = parseInt(time_.toString().substr(-1));
+    two_l = parseInt(time_.toString().substr(-2));
+
+    if (one_l === 1 && two_l < 11) {
+        return 'секунду';
+    }
+    else if (two_l > 20 && one_l === 1) {
+        return time_ + ' секунду';
+    }
+    else if (two_l > 20 && one_l > 1 && one_l < 5) {
+        return time_ + ' секунд';
+    }
+    else if (5 > one_l && one_l > 1 && two_l < 11) {
+        return time_ + ' секунд';
+    }
+    else {
+        return time_ + ' секунды';
+    }
+}
+
 $(document).ready(function() {
     const api_url = "https://api.telegram.org/bot";
     const file_api_url = "https://api.telegram.org/file/bot";
@@ -37,147 +177,7 @@ $(document).ready(function() {
     const req_url = api_url + token;
     const f_req_url = file_api_url + token;
 
-    setInterval(increment, 1000); 
-
-    function timeAgoConvert(date) {
-        let seconds = Math.floor((new Date() - date) / 1000);
-        let interval = seconds / 31536000;
-        let re = null;
-
-        if (interval > 1) {
-            time_ = Math.floor(interval);
-            one_l = parseInt(time_.toString().substr(-1));
-            two_l = parseInt(time_.toString().substr(-2));
-
-            if (one_l === 1 && two_l < 11) {
-                return 'год';
-            }
-            else if (two_l > 20 && one_l === 1) {
-                return time_ + ' год';
-            }
-            else if (two_l > 20 && one_l > 1 && one_l < 5) {
-                return time_ + ' года';
-            }
-            else if (5 > one_l && one_l > 1 && two_l < 11) {
-                return time_ + ' года';
-            }
-            else {
-                return time_ + ' лет';
-            }
-        }
-
-        interval = seconds / 2592000;
-        if (interval > 1) {
-            time_ = Math.floor(interval);
-            one_l = parseInt(time_.toString().substr(-1));
-            two_l = parseInt(time_.toString().substr(-2));
-
-            if (one_l === 1 && two_l < 11) {
-                return 'месяц';
-            }
-            else if (two_l > 20 && one_l === 1) {
-                return time_ + ' месяц';
-            }
-            else if (two_l > 20 && one_l > 1 && one_l < 5) {
-                return time_ + ' месяца';
-            }
-            else if (5 > one_l && one_l > 1 && two_l < 11) {
-                return time_ + ' месяца';
-            }
-            else {
-                return time_ + ' месяцев';
-            }
-        }
-
-        interval = seconds / 86400;
-        if (interval > 1) {
-            time_ = Math.floor(interval);
-            one_l = parseInt(time_.toString().substr(-1));
-            two_l = parseInt(time_.toString().substr(-2));
-
-            if (one_l === 1 && two_l < 11) {
-                return 'день';
-            }
-            else if (two_l > 20 && one_l === 1) {
-                return time_ + ' день';
-            }
-            else if (two_l > 20 && one_l > 1 && one_l < 5) {
-                return time_ + ' дня';
-            }
-            else if (5 > one_l && one_l > 1 && two_l < 11) {
-                return time_ + ' дня';
-            }
-            else {
-                return time_ + ' дней';
-            }
-        }
-
-        interval = seconds / 3600;
-        if (interval > 1) {
-            time_ = Math.floor(interval);
-            one_l = parseInt(time_.toString().substr(-1));
-            two_l = parseInt(time_.toString().substr(-2));
-
-            if (one_l === 1 && two_l < 11) {
-                return 'час';
-            }
-            else if (two_l > 20 && one_l === 1) {
-                return time_ + ' час';
-            }
-            else if (two_l > 20 && one_l > 1 && one_l < 5) {
-                return time_ + ' часа';
-            }
-            else if (5 > one_l && one_l > 1 && two_l < 11) {
-                return time_ + ' часа';
-            }
-            else {
-                return time_ + ' часов';
-            }
-        }
-
-        interval = seconds / 60;
-        if (interval > 1) {
-            time_ = Math.floor(interval);
-            one_l = parseInt(time_.toString().substr(-1));
-            two_l = parseInt(time_.toString().substr(-2));
-
-            if (one_l === 1 && two_l < 11) {
-                return 'минуту';
-            }
-            else if (two_l > 20 && one_l === 1) {
-                return time_ + ' минуту';
-            }
-            else if (two_l > 20 && one_l > 1 && one_l < 5) {
-                return time_ + ' минуты';
-            }
-            else if (5 > one_l && one_l > 1 && two_l < 11) {
-                return time_ + ' минуты';
-            }
-            else {
-                return time_ + ' минут';
-            }
-        }
-
-        time_ = Math.floor(seconds);
-        one_l = parseInt(time_.toString().substr(-1));
-        two_l = parseInt(time_.toString().substr(-2));
-
-        if (one_l === 1 && two_l < 11) {
-            return 'секунду';
-        }
-        else if (two_l > 20 && one_l === 1) {
-            return time_ + ' секунду';
-        }
-        else if (two_l > 20 && one_l > 1 && one_l < 5) {
-            return time_ + ' секунд';
-        }
-        else if (5 > one_l && one_l > 1 && two_l < 11) {
-            return time_ + ' секунд';
-        }
-        else {
-            return time_ + ' секунды';
-        }
-    }
+    setInterval(increment, 1000);
 
     function utc_to_user_tz(api_time) {
         let date_obj = new Date(api_time);
