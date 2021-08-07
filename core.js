@@ -286,6 +286,7 @@ $(document).ready(function() {
             $.ajax({
                 url: `${yt_api_url}/${method}`,
                 type: "GET",
+                async: false,
                 data: {
                     "part": "statistics",
                     "key": yt_tokens[Math.floor(Math.random()*yt_tokens.length)],
