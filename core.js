@@ -386,7 +386,7 @@ $(document).ready(function() {
                                     <i class="far fa-comments"></i> ${NumbersFormatter(data["commentCount"])}
                                     <br/>
                                     <p id="${array_['video_id']}_pub"></p> 
-                                    <script>setInterval(function(){$("#${array_['video_id']}_pub").text(timeAgoConvert(new Date(Date.now()-(Date.now()-{{ el.time }})))+" назад")},1000)</script>
+                                    <script>setInterval(function(){$("#${array_['video_id']}_pub").text(timeAgoConvert(new Date(Date.now()-(Date.now()-${data["video_published"]})))+" назад")},1000)</script>
                                 </small>
                                 </div>
                             </div>
