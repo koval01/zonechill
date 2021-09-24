@@ -145,8 +145,6 @@ $(document).ready(function() {
     const channel_uname = "zonechill";
 
     const yt_tokens = [
-        "AIzaSyCWFsQKsje5hHBxWpTKvH8RkCRBEpjBF18",
-        "AIzaSyCKgK-pA1ON_U1rIZpiu_hDwbrq9AaAcwI",
         "AIzaSyC8oRIIVUmZdcVZqO2ApmcGi8UjcCjHWXc",
         "AIzaSyArsfXA05cfiyJl78O3tRH1NRszXGwbeIg",
     ];
