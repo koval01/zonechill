@@ -145,20 +145,13 @@ $(document).ready(function() {
     const channel_uname = "zonechill";
 
     const yt_tokens = [
-        "AIzaSyDLXVw5lO1QEFR7ob21iLj_4e0kOON5oEw",
-        "AIzaSyAah-ibNXzJx8ejbMsfPtYY1mrQTMzW7Rs",
-        "AIzaSyCbDW_Tew_bDVQpBpZdKzNMB4yWO2a9ijw",
         "AIzaSyCyYTbCtXUAiLyrrBZ7abMiDCttuHOXoVc",
         "AIzaSyA9d3z77Y3oDDhrfw7dPKn5hg4FR4R6pCI",
-        "AIzaSyCD26j-0gnUmimCp5feCSm1fMtt3J5dZTc",
-        "AIzaSyA12g4EMxJvnr4J5uzg1EvjxR54qd0SGJ0",
         "AIzaSyCWFsQKsje5hHBxWpTKvH8RkCRBEpjBF18",
         "AIzaSyCKgK-pA1ON_U1rIZpiu_hDwbrq9AaAcwI",
-        "AIzaSyDoWNxdHrKhdEIJTdXu_ov8bSQOJ29wdsk",
         "AIzaSyC2ZHymch3Q63fg0hryap1f80iiJLZS5ac",
         "AIzaSyC8oRIIVUmZdcVZqO2ApmcGi8UjcCjHWXc",
         "AIzaSyArsfXA05cfiyJl78O3tRH1NRszXGwbeIg",
-        "AIzaSyDRnY9iWGKgojArIHEv5ej1blwFzajeFLI",
     ];
     const yt_api_url = "https://www.googleapis.com/youtube/v3";
     const yt_channel_elza = "UCUEoKLBj-lelT29QAEkkg2A";
