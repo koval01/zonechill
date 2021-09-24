@@ -145,23 +145,17 @@ $(document).ready(function() {
     const channel_uname = "zonechill";
 
     const yt_tokens = [
-        "AIzaSyCko11Nnujt1K-YPEhwYAgp3S6IpsIuxeA",
-        "AIzaSyAEnbBY3SPdwImzX5gek4djK7mrNNd-fow",
         "AIzaSyDLXVw5lO1QEFR7ob21iLj_4e0kOON5oEw",
-        "AIzaSyAQBgSsK2goleYjY3fINWnNQfu9gX6zhdQ",
         "AIzaSyAah-ibNXzJx8ejbMsfPtYY1mrQTMzW7Rs",
         "AIzaSyCbDW_Tew_bDVQpBpZdKzNMB4yWO2a9ijw",
         "AIzaSyCyYTbCtXUAiLyrrBZ7abMiDCttuHOXoVc",
-        "AIzaSyB5L9fS7UFE6Ew9uV1v7FSTQp2lEf82-_E",
         "AIzaSyA9d3z77Y3oDDhrfw7dPKn5hg4FR4R6pCI",
         "AIzaSyCD26j-0gnUmimCp5feCSm1fMtt3J5dZTc",
-        "AIzaSyD2O9bJtRZYXMpuye8GHWm4jZ9rM1i21yM",
         "AIzaSyA12g4EMxJvnr4J5uzg1EvjxR54qd0SGJ0",
         "AIzaSyCWFsQKsje5hHBxWpTKvH8RkCRBEpjBF18",
         "AIzaSyCKgK-pA1ON_U1rIZpiu_hDwbrq9AaAcwI",
         "AIzaSyDoWNxdHrKhdEIJTdXu_ov8bSQOJ29wdsk",
         "AIzaSyC2ZHymch3Q63fg0hryap1f80iiJLZS5ac",
-        "AIzaSyAK1a-oxOXujqQlRRYd9n3AAkpVOXND6iw",
         "AIzaSyC8oRIIVUmZdcVZqO2ApmcGi8UjcCjHWXc",
         "AIzaSyArsfXA05cfiyJl78O3tRH1NRszXGwbeIg",
         "AIzaSyDRnY9iWGKgojArIHEv5ej1blwFzajeFLI",
