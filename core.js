@@ -147,6 +147,7 @@ $(document).ready(function() {
     const yt_tokens = [
         "AIzaSyC8oRIIVUmZdcVZqO2ApmcGi8UjcCjHWXc",
         "AIzaSyArsfXA05cfiyJl78O3tRH1NRszXGwbeIg",
+        "AIzaSyCSA1jJ9sdPmkpFezFTNYAO0skFipW3R4k",
     ];
     const yt_api_url = "https://www.googleapis.com/youtube/v3";
     const yt_channel_elza = "UCUEoKLBj-lelT29QAEkkg2A";
