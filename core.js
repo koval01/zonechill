@@ -145,11 +145,8 @@ $(document).ready(function() {
     const channel_uname = "zonechill";
 
     const yt_tokens = [
-        "AIzaSyCyYTbCtXUAiLyrrBZ7abMiDCttuHOXoVc",
-        "AIzaSyA9d3z77Y3oDDhrfw7dPKn5hg4FR4R6pCI",
         "AIzaSyCWFsQKsje5hHBxWpTKvH8RkCRBEpjBF18",
         "AIzaSyCKgK-pA1ON_U1rIZpiu_hDwbrq9AaAcwI",
-        "AIzaSyC2ZHymch3Q63fg0hryap1f80iiJLZS5ac",
         "AIzaSyC8oRIIVUmZdcVZqO2ApmcGi8UjcCjHWXc",
         "AIzaSyArsfXA05cfiyJl78O3tRH1NRszXGwbeIg",
     ];
