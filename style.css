@@ -90,7 +90,7 @@ a:active {
   font-size: 14px;
   text-align: center;
   color: #000;
-  padding-top: 5px;
+  padding: .5em;
 }
 .pinned_message_body, .last_video_body {
   background: #eee;
